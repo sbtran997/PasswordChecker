@@ -43,7 +43,7 @@ function evaluatePassword() {
   lowercaseCheck.textContent = hasLowercase ? '✅' : '❌';
   numberCheck.textContent = hasNumber ? '✅' : '❌';
   specialCheck.textContent = hasSpecial ? '✅' : '❌';
-  specialAsterisk.textContent = hasAsterisk ? '✅' : '❌';
+  asteriskCheck.textContent = hasAsterisk ? '✅' : '❌';
   
   // Calculate strength score (0-100)
   let score = 0;
