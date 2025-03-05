@@ -9,6 +9,7 @@ const uppercaseCheck = document.getElementById('uppercase-check');
 const lowercaseCheck = document.getElementById('lowercase-check');
 const numberCheck = document.getElementById('number-check');
 const specialCheck = document.getElementById('special-check');
+const asteriskCheck = document.getElementById('asterisk-check');
 const suggestionsBox = document.getElementById('suggestions');
 
 // Toggle password visibility
