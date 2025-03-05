@@ -64,7 +64,7 @@ function evaluatePassword() {
   updateStrengthUI(score);
   
   // Generate suggestions
-  generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk);
+  generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial);
 }
 
 function updateStrengthUI(score) {
@@ -97,7 +97,7 @@ function updateStrengthUI(score) {
   strengthLabel.textContent = strengthText;
 }
 
-function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk) {
+function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial) {
   if (password.length === 0) {
     suggestionsBox.textContent = '';
     return;
