@@ -10,6 +10,7 @@ const lowercaseCheck = document.getElementById('lowercase-check');
 const numberCheck = document.getElementById('number-check');
 const specialCheck = document.getElementById('special-check');
 const asteriskCheck = document.getElementById('asterisk-check');
+const orangeCheck = document.getElementById('orange-check');
 const suggestionsBox = document.getElementById('suggestions');
 
 // Toggle password visibility
@@ -36,6 +37,7 @@ function evaluatePassword() {
   const hasNumber = /[0-9]/.test(password);
   const hasSpecial = /[^A-Za-z0-9]/.test(password);
   const hasAsterisk = /[*]/.test(password);
+  const hasOrange = /orange/.test(password);
   
   // Update requirement checks
   lengthCheck.textContent = hasLength ? '✅' : '❌';
@@ -44,6 +46,7 @@ function evaluatePassword() {
   numberCheck.textContent = hasNumber ? '✅' : '❌';
   specialCheck.textContent = hasSpecial ? '✅' : '❌';
   asteriskCheck.textContent = hasAsterisk ? '✅' : '❌';
+  orangeCheck.textContent = hasOrange ? '✅' : '❌';
   
   // Calculate strength score (0-100)
   let score = 0;
@@ -54,17 +57,18 @@ function evaluatePassword() {
   }
   
   // Points for character variety
-  if (hasUppercase) score += 15;
-  if (hasLowercase) score += 15;
+  if (hasUppercase) score += 10;
+  if (hasLowercase) score += 10;
   if (hasNumber) score += 15;
   if (hasSpecial) score += 15;
   if (hasAsterisk) score += 10;
+  if (hasOrange) score += 10;
   
   // Calculate strength category and update UI
   updateStrengthUI(score);
   
   // Generate suggestions
-  generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk);
+  generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk, hasOrange);
 }
 
 function updateStrengthUI(score) {
@@ -97,7 +101,7 @@ function updateStrengthUI(score) {
   strengthLabel.textContent = strengthText;
 }
 
-function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk) {
+function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, hasNumber, hasSpecial, hasAsterisk, hasOrange) {
   if (password.length === 0) {
     suggestionsBox.textContent = '';
     return;
@@ -127,6 +131,10 @@ function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, ha
 
   if (!hasAsterisk) {
     suggestions.push('Add at least one asterisk characters.');
+  }
+
+  if (!hasAsterisk) {
+    suggestions.push('Add the string orange.');
   }
   
   // Check for common patterns
