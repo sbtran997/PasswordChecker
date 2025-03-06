@@ -133,7 +133,7 @@ function generateSuggestions(password, hasLength, hasUppercase, hasLowercase, ha
     suggestions.push('Add at least one asterisk characters.');
   }
 
-  if (!hasAsterisk) {
+  if (!hasOrange) {
     suggestions.push('Add the string orange.');
   }
   
