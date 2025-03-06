@@ -37,7 +37,7 @@ function evaluatePassword() {
   const hasNumber = /[0-9]/.test(password);
   const hasSpecial = /[^A-Za-z0-9]/.test(password);
   const hasAsterisk = /[*]/.test(password);
-  const hasOrange = /orange/i.test(password);
+  const hasOrange = /[orange]/.test(password);
   
   // Update requirement checks
   lengthCheck.textContent = hasLength ? '✅' : '❌';
