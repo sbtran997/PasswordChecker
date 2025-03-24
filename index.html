@@ -1,73 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Password Strength Checker</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Travel Buddy</title>
+    <style>
+        /* Additional styles for the new button */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .start-button, .quiz-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .quiz-button {
+            background-color: #6c757d;
+        }
+        
+        .start-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .quiz-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>Password Strength Checker</h1>
-      <p>Enter a password below to check its strength and get suggestions for improvement.</p>
-    </div>
+    <h1 class="heading">Travel Buddy</h1>
     
-    <div class="card">
-      <div class="card-header">
-        <h2>Password Strength Checker</h2>
-      </div>
-      <div class="card-content">
-        <div class="password-input-container">
-          <input type="password" id="password-input" placeholder="Enter your password" class="password-input">
-          <button type="button" id="toggle-visibility" class="toggle-button">
-            <span id="eye-icon">👁️</span>
-          </button>
-        </div>
-        
-        <div class="strength-indicator">
-          <div class="strength-bar-container">
-            <div id="strength-bar" class="strength-bar"></div>
-          </div>
-          <div id="strength-label" class="strength-label">Strength: Too Weak</div>
-        </div>
-        
-        <div id="requirements-checklist" class="requirements-checklist">
-          <div class="requirement-item">
-            <span id="length-check" class="check">❌</span>
-            <span>At least 10 characters</span>
-          </div>
-          <div class="requirement-item">
-            <span id="uppercase-check" class="check">❌</span>
-            <span>At least one uppercase letter</span>
-          </div>
-          <div class="requirement-item">
-            <span id="lowercase-check" class="check">❌</span>
-            <span>At least one lowercase letter</span>
-          </div>
-          <div class="requirement-item">
-            <span id="number-check" class="check">❌</span>
-            <span>At least one number</span>
-          </div>
-          <div class="requirement-item">
-            <span id="special-check" class="check">❌</span>
-            <span>At least one special character</span>
-          </div>
-          <div class="requirement-item">
-            <span id="asterisk-check" class="check">❌</span>
-            <span>At least one asterisk character</span>
-          </div>
-          <div class="requirement-item">
-            <span id="orange-check" class="check">❌</span>
-            <span>Add the string "apple"</span>
-          </div>
-        </div>
-        
-        <div id="suggestions" class="suggestions"></div>
-      </div>
+    <div class="button-container">
+        <a href="pages/map.html" class="start-button">Start Planning</a>
+        <a href="pages/interest-quiz.html" class="quiz-button">Take Interest Quiz</a>
     </div>
-  </div>
-  
-  <script src="script.js"></script>
 </body>
 </html>
